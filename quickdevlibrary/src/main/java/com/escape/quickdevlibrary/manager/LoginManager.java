@@ -3,9 +3,9 @@ package com.escape.quickdevlibrary.manager;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.escape.quickdevlibrary.bean.BaseUserIface;
+import com.escape.quickdevlibrary.utils.JsonUtils;
 import com.google.gson.Gson;
-import com.ly.quickdev.library.bean.BaseUserIface;
-import com.ly.quickdev.library.utils.JsonUtils;
 
 public class LoginManager<T extends BaseUserIface> {
 
