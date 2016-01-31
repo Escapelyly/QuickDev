@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="BaseStyle.Widget.ButtonLight" parent="@android:style/Widget.Holo.Light.Button"></style>
+
+    <style name="BaseStyle.Widget.RadioButtonLight" parent="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"></style>
+
+    <style name="Quick.Widget.ListView" parent="@android:style/Widget.Holo.ListView">
+        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
+    </style>
+
+    <style name="Quick.Widget.GridView" parent="@android:style/Widget.Holo.GridView">
+        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
+    </style>
+
+</resources>

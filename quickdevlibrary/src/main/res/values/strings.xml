@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="load_failed">加载数据失败，点击重试</string>
+    <string name="loading_data">正在努力加载，请稍候...</string>
+    <string name="setting">设置</string>
+    <string name="login">登陆</string>
+    <string name="logout">退出登陆</string>
+    <string name="reg">注册</string>
+    <string name="phone_number">手机号</string>
+    <string name="pass">密码</string>
+    <string name="forget_pass">忘记密码</string>
+    <string name="confirm_pass">重复密码</string>
+    <string name="ok">确定</string>
+    <string name="input_phone_number">请输入您的11位手机号码</string>
+    <string name="input_check_code">请输入验证码</string>
+    <string name="get_check_code">获取验证码</string>
+    <string name="ptr_pull_to_refresh">Pull to refresh</string>
+    <string name="ptr_release_to_refresh">Release to refresh</string>
+    <string name="ptr_refreshing">Refreshing</string>
+    <string name="ptr_last_updated">Updated: %1$s</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <!-- Strings for possible PreferenceActivity Back/Next buttons -->
+    <string name="back_button_label">Back</string>
+    <string name="next_button_label">Next</string>
+   <string name="drawer_open">打开菜单</string>
+    <string name="drawer_close">关闭菜单</string>
+    <!-- Optional button to Skip a PreferenceActivity [CHAR LIMIT=20] -->
+    <string name="skip_button_label">Skip</string>
+
+    <string-array name="jazzy_effects">
+        <item>Standard</item>
+        <item>Tablet</item>
+        <item>CubeIn</item>
+        <item>CubeOut</item>
+        <item>FlipVertical</item>
+        <item>FlipHorizontal</item>
+        <item>Stack</item>
+        <item>ZoomIn</item>
+        <item>ZoomOut</item>
+        <item>RotateUp</item>
+        <item>RotateDown</item>
+        <item>Accordion</item>
+    </string-array>
+
+    <style name="dialog_animation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/push_in_down_to_up</item>
+        <item name="android:windowExitAnimation">@anim/push_out__up_to_down</item>
+    </style>
+
+</resources>
