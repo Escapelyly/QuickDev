@@ -4,6 +4,7 @@ import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
@@ -17,9 +18,51 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.escape.quickdevlibrary.R;
+import com.escape.quickdevlibrary.delegate.ViewController;
 
 
-public class DevBaseFragment extends Fragment implements OnClickListener {
+public abstract class DevBaseFragment extends Fragment implements OnClickListener {
+    private ViewController mViewController;
+
+
+    public abstract ViewController onCreateViewController();
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mViewController = onCreateViewController();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mViewController.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mViewController.onResume();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mViewController.onStart();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mViewController.onStop();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mViewController.onDestroy();
+    }
+
     public String getTextViewText(int id) {
         TextView tv = findViewById(id);
         return tv == null ? "" : tv.getText().toString();
@@ -54,8 +97,14 @@ public class DevBaseFragment extends Fragment implements OnClickListener {
         return inflater.inflate(getLayoutId(), container, false);
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mViewController.onViewCreated();
+    }
+
     public int getLayoutId() {
-        return 0;
+        return mViewController.getLayoutId();
     }
 
     @SuppressWarnings("unchecked")

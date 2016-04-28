@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.escape.quickdevlibrary.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,12 +36,10 @@ public class ListBaseRecyclerAdapter<T> extends
     private boolean mLoadingMore;//表示是否已经在加载更多了
     private List<T> mList;
     private Context mContext;
-    private List<View> mFooters;
 
     public ListBaseRecyclerAdapter(Context context, List<T> list) {
         mContext = context;
         mList = list;
-        mFooters = new ArrayList<>();
     }
 
     public boolean isShouldLoadMore() {
@@ -65,7 +62,7 @@ public class ListBaseRecyclerAdapter<T> extends
             return new YFViewHolder(view);
         }
         YFViewHolder yfViewHolder = new YFViewHolder(getView(parent, viewType));
-        mViewProvider.onCreateViewHolder(yfViewHolder, viewType);
+        mViewProvider.onCreateViewHolder(yfViewHolder, viewType );
         return yfViewHolder;
     }
 
@@ -79,7 +76,7 @@ public class ListBaseRecyclerAdapter<T> extends
             }
         }
         if (mViewProvider != null) {
-            return mViewProvider.getItemViewType(position);
+            return mViewProvider.getItemViewType(position,mList.get(position) );
         }
         return super.getItemViewType(position);
     }
@@ -106,7 +103,7 @@ public class ListBaseRecyclerAdapter<T> extends
             });
         }
         if (mViewProvider != null) {
-            mViewProvider.convertObject2View(holder, position);
+            mViewProvider.convertObject2View(holder, position,mList.get(position) );
         }
     }
 
@@ -144,13 +141,12 @@ public class ListBaseRecyclerAdapter<T> extends
         mViewProvider = viewProvider;
     }
 
-    public interface ViewProvider {
+    public interface ViewProvider<T> {
         View getView(ViewGroup parent, int viewType);
 
-        void convertObject2View(YFViewHolder holder, int
-                position);
+        void convertObject2View(YFViewHolder holder, int position, T item);
 
-        int getItemViewType(int position);
+        int getItemViewType(int position, T item);
 
         int getItemCount();
 

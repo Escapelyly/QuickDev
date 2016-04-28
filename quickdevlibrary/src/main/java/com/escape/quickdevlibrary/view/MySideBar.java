@@ -8,7 +8,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.ly.quickdev.library.R;
+import com.escape.quickdevlibrary.R;
+
 
 /**
  * ListVIew右侧导航面板

@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.escape.quickdevlibrary.R;
 import com.escape.quickdevlibrary.bean.Constants;
+import com.escape.quickdevlibrary.delegate.ViewController;
 import com.escape.quickdevlibrary.imageutils.ImageFloder;
 import com.escape.quickdevlibrary.imageutils.ListImageDirPopupWindow;
 import com.escape.quickdevlibrary.imageutils.MyAdapter;
@@ -91,6 +92,11 @@ public class ChoosePhotoActivity extends DevBaseActivity implements
 			initListDirPopupWindw();
 		}
 	};
+
+	@Override
+	public ViewController onCreateViewController() {
+		return null;
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

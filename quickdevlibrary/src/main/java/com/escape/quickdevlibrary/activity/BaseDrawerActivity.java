@@ -10,12 +10,18 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.escape.quickdevlibrary.R;
+import com.escape.quickdevlibrary.delegate.ViewController;
 
 
 public class BaseDrawerActivity extends DevBaseActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
+
+    @Override
+    public ViewController onCreateViewController() {
+        return null;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

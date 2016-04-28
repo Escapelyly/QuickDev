@@ -1,8 +1,5 @@
 package com.escape.quickdevlibrary.view;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -17,8 +14,11 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.ly.quickdev.library.R;
+import com.escape.quickdevlibrary.R;
 import com.nineoldandroids.view.ViewHelper;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * 支持自定义转换动画的viewpager

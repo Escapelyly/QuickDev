@@ -30,18 +30,65 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.escape.quickdevlibrary.R;
+import com.escape.quickdevlibrary.delegate.ViewController;
 
 import java.lang.reflect.Field;
 import java.util.List;
 
-public class DevBaseActivity extends AppCompatActivity implements
+public abstract class DevBaseActivity extends AppCompatActivity implements
         OnClickListener {
+    private ViewController mViewController;
+
+
+    public abstract ViewController onCreateViewController();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(WindowCompat.FEATURE_ACTION_MODE_OVERLAY);
         super.onCreate(savedInstanceState);
+        mViewController = onCreateViewController();
+        mViewController.onCreate(savedInstanceState);
+        int layoutId = mViewController.getLayoutId();
+        if (layoutId != 0) {
+            setContentView(layoutId);
+        }
+    }
 
+    @Override
+    public void onContentChanged() {
+        super.onContentChanged();
+        mViewController.onViewCreated();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mViewController.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mViewController.onResume();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mViewController.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mViewController.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mViewController.onDestroy();
     }
 
     public String getTextViewText(int id) {

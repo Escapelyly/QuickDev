@@ -61,7 +61,6 @@ public class NetworkStateFragment extends Fragment {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
 				Intent intent = null;
 				// 判断手机系统的版本 即API大于10 就是3.0或以上版本
 				if (android.os.Build.VERSION.SDK_INT > 10) {

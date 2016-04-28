@@ -19,7 +19,7 @@ import java.util.List;
  * Created by 洋 on 2015/12/10.
  */
 public abstract class DevBaseRecyclerViewFragment<T> extends DevBaseFragment implements
-        ListBaseRecyclerAdapter.OnItemClickListener<T>, ListBaseRecyclerAdapter.ViewProvider,
+        ListBaseRecyclerAdapter.OnItemClickListener<T>, ListBaseRecyclerAdapter.ViewProvider<T>,
         SwipeRefreshLayout.OnRefreshListener {
     protected List<T> mList = new ArrayList<>();
     protected RecyclerView mRecyclerView;
@@ -68,7 +68,7 @@ public abstract class DevBaseRecyclerViewFragment<T> extends DevBaseFragment imp
     }
 
     @Override
-    public int getItemViewType(int position) {
+    public int getItemViewType(int position, Object item) {
         return 0;
     }
 

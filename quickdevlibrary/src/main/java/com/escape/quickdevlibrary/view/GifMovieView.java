@@ -9,7 +9,8 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.ly.quickdev.library.R;
+import com.escape.quickdevlibrary.R;
+
 
 /**
  * This is a View class that wraps Android {@link Movie} object and displays it.

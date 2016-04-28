@@ -17,7 +17,8 @@ import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.util.AttributeSet;
 
-import com.ly.quickdev.library.R;
+import com.escape.quickdevlibrary.R;
+
 
 /**
  * 圆形imageview
