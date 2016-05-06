@@ -1,1 +1,1 @@
-include ':quickdevlibrary', ':samples'
+include ':quickdevlibrary', ':samples', ':quickdev_baidumap'

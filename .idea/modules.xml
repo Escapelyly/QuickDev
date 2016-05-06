@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/QuickDev.iml" filepath="$PROJECT_DIR$/QuickDev.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quickdev_baidumap/quickdev_baidumap.iml" filepath="$PROJECT_DIR$/quickdev_baidumap/quickdev_baidumap.iml" />
       <module fileurl="file://$PROJECT_DIR$/quickdevlibrary/quickdevlibrary.iml" filepath="$PROJECT_DIR$/quickdevlibrary/quickdevlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/samples/samples.iml" filepath="$PROJECT_DIR$/samples/samples.iml" />
     </modules>

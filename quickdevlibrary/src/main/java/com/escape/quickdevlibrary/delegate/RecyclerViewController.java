@@ -1,7 +1,6 @@
 package com.escape.quickdevlibrary.delegate;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,10 +39,6 @@ public abstract class RecyclerViewController<T> extends ViewController implement
         mViewProvider = this;
     }
 
-    @Override
-    public void onCreate(Bundle bundle) {
-
-    }
 
     @Override
     public int getLayoutId() {
@@ -77,30 +72,6 @@ public abstract class RecyclerViewController<T> extends ViewController implement
         return new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false);
     }
 
-
-    public void onResume() {
-
-    }
-
-
-    public void onPause() {
-
-    }
-
-    @Override
-    public void onStart() {
-
-    }
-
-    @Override
-    public void onStop() {
-
-    }
-
-
-    public void onDestory() {
-
-    }
 
     private <T extends View> T findView(int id) {
         return (T) mView.findViewById(id);
@@ -293,9 +264,5 @@ public abstract class RecyclerViewController<T> extends ViewController implement
 
     public void setDefaultPageNo(int defaultPageNo) {
         mDefaultPageNo = defaultPageNo;
-    }
-
-    public Activity getActivity() {
-        return mActivity;
     }
 }
