@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,18 +14,18 @@ import android.widget.TextView;
  * Created by 洋 on 2016/4/26.
  */
 public abstract class ViewController {
-    protected Activity mActivity;
+    protected AppCompatActivity mActivity;
     protected View mView;
     protected Fragment mFragment;
 
     public ViewController(Activity activity) {
-        mActivity = activity;
+        mActivity = (AppCompatActivity) activity;
         mView = mActivity.getWindow().getDecorView();
     }
 
     public ViewController(Fragment fragment) {
         mFragment = fragment;
-        mActivity = mFragment.getActivity();
+        mActivity = (AppCompatActivity) mFragment.getActivity();
         mView = mFragment.getView();
     }
 
@@ -33,7 +34,7 @@ public abstract class ViewController {
     }
 
 
-    public Activity getActivity() {
+    public AppCompatActivity getActivity() {
         return mActivity;
     }
 

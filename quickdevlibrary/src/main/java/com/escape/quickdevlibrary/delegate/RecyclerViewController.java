@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.escape.quickdevlibrary.R;
 import com.escape.quickdevlibrary.adapter.ListBaseRecyclerAdapter;
+import com.escape.quickdevlibrary.recyclerview.RecyleViewDivider;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,17 +56,14 @@ public abstract class RecyclerViewController<T> extends ViewController implement
         mRecyclerView.setLayoutManager(layoutManager);
         mAdapter = onCreateAdapter();
         mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-            }
+        RecyclerView.ItemDecoration divider = onCreateDivider(mRecyclerView);
+        if (divider != null) {
+            mRecyclerView.addItemDecoration(divider);
+        }
+    }
 
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-            }
-        });
+    public RecyclerView.ItemDecoration onCreateDivider(RecyclerView recyclerView) {
+        return new RecyleViewDivider(getActivity(), RecyleViewDivider.VERTICAL_LIST);
     }
 
     private RecyclerView.LayoutManager onCreateLayoutManager(RecyclerView recyclerView) {
@@ -204,7 +202,7 @@ public abstract class RecyclerViewController<T> extends ViewController implement
 
     }
 
-    public  abstract void loadData();
+    public abstract void loadData();
 
     @Override
     public void onCreateViewHolder(ListBaseRecyclerAdapter.YFViewHolder holder, int viewType) {
