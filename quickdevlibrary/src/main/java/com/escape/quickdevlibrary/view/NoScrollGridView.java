@@ -4,12 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.GridView;
 
-/**
- * 所有item都显示在屏幕上，无法滚动的gridview，可以嵌套在listview里
- * 
- * @author 李洋
- * 
- */
 public class NoScrollGridView extends GridView {
 
 	public NoScrollGridView(Context context, AttributeSet attrs, int defStyle) {

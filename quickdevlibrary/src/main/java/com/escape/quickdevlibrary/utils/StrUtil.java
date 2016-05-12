@@ -23,13 +23,6 @@ import java.util.List;
  */
 public class StrUtil {
 
-    /***
-     * 根据splice拼接字符串
-     *
-     * @param splice 拼接字符
-     * @param str    字符串数组
-     * @return
-     */
     public static String splicStr(String splice, String... str) {
         String s = null;
         for (String ss : str) {
@@ -39,16 +32,6 @@ public class StrUtil {
         }
         return s;
     }
-
-    /***
-     * 两个字符串，设置前一个的颜色
-     *
-     * @param context 上下文
-     * @param str1    第一个
-     * @param str2    第二个
-     * @param color   颜色
-     * @return
-     */
     public static CharSequence strSetColor(Context context, String str1, String str2, int color) {
         SpannableStringBuilder sb = new SpannableStringBuilder(str1 + str2);
         sb.setSpan(new ForegroundColorSpan(context.getResources().getColor(color))
@@ -56,14 +39,6 @@ public class StrUtil {
         return sb;
     }
 
-    /***
-     * 比较两个日期
-     *
-     * @param date1 第一个
-     * @param date2 第二个
-     * @param key   日期截取的key
-     * @return true 第一个大于第二个
-     */
     public static boolean compareDate(String date1, String date2, String key) {
         String[] char1 = interceptStr(date1, key);
         String[] char2 = interceptStr(date2, key);
@@ -86,14 +61,6 @@ public class StrUtil {
         }
         return false;
     }
-
-    /***
-     * 判断两个字符串是否相等
-     *
-     * @param str 字符串
-     * @param key 比较的字符串
-     * @return
-     */
     public static boolean judgeByStr(String str, String key) {
         if (TextUtils.isEmpty(str))
             return false;
@@ -103,28 +70,12 @@ public class StrUtil {
             return false;
         }
     }
-
-    /***
-     * 替换为空的字符串
-     *
-     * @param str  判断的字符串
-     * @param rStr 替换的字符串
-     * @return
-     */
     public static String replaceStr(String str, String rStr) {
         if (TextUtils.isEmpty(str))
             return rStr;
         return str;
     }
 
-    /***
-     * 截取字符串
-     *
-     * @param str    字符串
-     * @param len    长度
-     * @param isOmit 是否要省略号
-     * @return
-     */
     public static String interceptStr(String str, int len, boolean isOmit) {
         if (TextUtils.isEmpty(str))
             return "";
@@ -136,26 +87,11 @@ public class StrUtil {
             return str.substring(0, len);
         }
     }
-
-    /***
-     * 截取字符串数组
-     *
-     * @param str 字符串
-     * @param key 要截取的字符
-     * @return
-     */
     public static String[] interceptStr(String str, String key) {
         if (TextUtils.isEmpty(str))
             return null;
         return str.split(key);
     }
-
-    /***
-     * 获取拼音
-     *
-     * @param str
-     * @return
-     */
     public static String getPingYin(String str) {
         HanyuPinyinOutputFormat format = new HanyuPinyinOutputFormat();
         format.setCaseType(HanyuPinyinCaseType.LOWERCASE);

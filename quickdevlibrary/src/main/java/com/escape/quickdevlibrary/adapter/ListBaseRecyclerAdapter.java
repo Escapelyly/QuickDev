@@ -12,9 +12,6 @@ import com.escape.quickdevlibrary.R;
 
 import java.util.List;
 
-/**
- * Created by 洋 on 2015/12/7.
- */
 public class ListBaseRecyclerAdapter<T> extends
         RecyclerView.Adapter<ListBaseRecyclerAdapter.YFViewHolder> {
 

@@ -79,30 +79,21 @@ public abstract class FragmentTabsViewController extends ViewController implemen
 
     /**
      * 返回tab的标题
-     *
-     * @return
      */
     public abstract String[] getTabTitles();
 
     /**
      * 返回tab对应的fragment
-     *
-     * @return
      */
     public abstract Class<? extends Fragment>[] getFragments();
 
     /**
      * 返回每个fragment对应的参数
-     *
-     * @param position
-     * @return
      */
     public abstract Bundle getFragmentArguments(int position);
 
     /**
      * 返回对应的icon
-     *
-     * @return
      */
     public abstract int[] getTabIcons();
 

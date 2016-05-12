@@ -8,12 +8,6 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-/**
- * unfinished,please dont use util it has been finished
- * 
- * @author 洋
- * 
- */
 public class CornerMarkView extends TextView {
 
 	private int mSize;

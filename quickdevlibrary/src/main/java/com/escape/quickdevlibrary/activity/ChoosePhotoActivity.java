@@ -48,29 +48,14 @@ public class ChoosePhotoActivity extends DevBaseActivity implements
 
 	private ProgressDialog mProgressDialog;
 
-	/**
-	 * 存储文件夹中的图片数量
-	 */
 	private int mPicsSize;
-	/**
-	 * 图片数量最多的文件夹
-	 */
 	private File mImgDir;
-	/**
-	 * 所有的图片
-	 */
 	private List<String> mImgs;
 
 	private GridView mGirdView;
 	private MyAdapter mAdapter;
-	/**
-	 * 临时的辅助类，用于防止同一个文件夹的多次扫描
-	 */
 	private HashSet<String> mDirPaths = new HashSet<String>();
 
-	/**
-	 * 扫描拿到所有的图片文件夹
-	 */
 	private List<ImageFloder> mImageFloders = new ArrayList<ImageFloder>();
 
 	private View mBottomLy;
@@ -129,9 +114,6 @@ public class ChoosePhotoActivity extends DevBaseActivity implements
 		}
 	}
 
-	/**
-	 * 为View绑定数据
-	 */
 	private void data2View() {
 		if (mImgDir == null) {
 			// Toast.makeText(getApplicationContext(), "擦，一张图片没扫描到",
@@ -140,18 +122,12 @@ public class ChoosePhotoActivity extends DevBaseActivity implements
 		}
 
 		mImgs = Arrays.asList(mImgDir.list());
-		/**
-		 * 可以看到文件夹的路径和图片的路径分开保存，极大的减少了内存的消耗；
-		 */
 		mAdapter = new MyAdapter(getActivity(), mImgs, R.layout.grid_item,
 				mImgDir.getAbsolutePath(), mAction);
 		mGirdView.setAdapter(mAdapter);
 		mAdapter.setTextCallback(this);
 	};
 
-	/**
-	 * 初始化展示文件夹的popupWindw
-	 */
 	private void initListDirPopupWindw() {
 		mListImageDirPopupWindow = new ListImageDirPopupWindow(
 				LayoutParams.MATCH_PARENT, (int) (mScreenHeight * 0.7),
@@ -172,9 +148,6 @@ public class ChoosePhotoActivity extends DevBaseActivity implements
 		mListImageDirPopupWindow.setOnImageDirSelected(this);
 	}
 
-	/**
-	 * 利用ContentProvider扫描手机中的图片，此方法在运行在子线程中 完成图片的扫描，最终获得jpg最多的那个文件夹
-	 */
 	private void getImages() {
 		if (!Environment.getExternalStorageState().equals(
 				Environment.MEDIA_MOUNTED)) {
@@ -263,9 +236,6 @@ public class ChoosePhotoActivity extends DevBaseActivity implements
 
 	}
 
-	/**
-	 * 初始化View
-	 */
 	private void initView() {
 		mGirdView = (GridView) findViewById(R.id.id_gridView);
 		mChooseDir = (TextView) findViewById(R.id.id_choose_dir);
@@ -277,9 +247,6 @@ public class ChoosePhotoActivity extends DevBaseActivity implements
 	}
 
 	private void initEvent() {
-		/**
-		 * 为底部的布局设置点击事件，弹出popupWindow
-		 */
 		mBottomLy.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -311,9 +278,6 @@ public class ChoosePhotoActivity extends DevBaseActivity implements
 				return false;
 			}
 		}));
-		/**
-		 * 可以看到文件夹的路径和图片的路径分开保存，极大的减少了内存的消耗；
-		 */
 		mAdapter = new MyAdapter(getActivity(), mImgs, R.layout.grid_item,
 				mImgDir.getAbsolutePath(), mAction);
 		mGirdView.setAdapter(mAdapter);

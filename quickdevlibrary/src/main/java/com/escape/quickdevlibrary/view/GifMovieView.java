@@ -12,17 +12,6 @@ import android.view.View;
 import com.escape.quickdevlibrary.R;
 
 
-/**
- * This is a View class that wraps Android {@link Movie} object and displays it.
- * You can set GIF as a Movie object or as a resource id from XML or by calling
- * {@link #setMovie(Movie)} or {@link #setMovieResource(int)}.
- * <p>
- * You can pause and resume GIF animation by calling {@link #setPaused(boolean)}.
- * <p>
- * The animation is drawn in the center inside of the measured view bounds.
- * 
- * @author Sergey Bakhtiarov
- */
 
 public class GifMovieView extends View {
 
@@ -34,20 +23,10 @@ public class GifMovieView extends View {
 	private long mMovieStart;
 	private int mCurrentAnimationTime = 0;
 
-	/**
-	 * Position for drawing animation frames in the center of the view.
-	 */
 	private float mLeft;
 	private float mTop;
-
-	/**
-	 * Scaling factor to fit the animation within view bounds.
-	 */
 	private float mScale;
 
-	/**
-	 * Scaled movie frames width and height.
-	 */
 	private int mMeasuredMovieWidth;
 	private int mMeasuredMovieHeight;
 
@@ -71,10 +50,6 @@ public class GifMovieView extends View {
 	@SuppressLint("NewApi")
 	private void setViewAttributes(Context context, AttributeSet attrs, int defStyle) {
 
-		/**
-		 * Starting from HONEYCOMB have to turn off HW acceleration to draw
-		 * Movie on Canvas.
-		 */
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 			setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 		}
@@ -115,10 +90,6 @@ public class GifMovieView extends View {
 	public void setPaused(boolean paused) {
 		this.mPaused = paused;
 
-		/**
-		 * Calculate new movie start time, so that it resumes from the same
-		 * frame.
-		 */
 		if (!paused) {
 			mMovieStart = android.os.SystemClock.uptimeMillis() - mCurrentAnimationTime;
 		}
@@ -207,12 +178,6 @@ public class GifMovieView extends View {
 		}
 	}
 
-	/**
-	 * Invalidates view only if it is visible.
-	 * <br>
-	 * {@link #postInvalidateOnAnimation()} is used for Jelly Bean and higher.
-	 * 
-	 */
 	@SuppressLint("NewApi")
 	private void invalidateView() {
 		if(mVisible) {
@@ -224,9 +189,6 @@ public class GifMovieView extends View {
 		}
 	}
 
-	/**
-	 * Calculate current animation time
-	 */
 	private void updateAnimationTime() {
 		long now = android.os.SystemClock.uptimeMillis();
 
@@ -243,9 +205,6 @@ public class GifMovieView extends View {
 		mCurrentAnimationTime = (int) ((now - mMovieStart) % dur);
 	}
 
-	/**
-	 * Draw current GIF frame
-	 */
 	private void drawMovieFrame(Canvas canvas) {
 
 		mMovie.setTime(mCurrentAnimationTime);

@@ -20,18 +20,12 @@ import java.util.List;
 
 public class MyAdapter extends CommonAdapter<String> {
 
-	/**
-	 * 用户选择的图片，存储为图片的完整路径
-	 */
 	public List<String> mSelectedImage;
 	private TextCallback textcallback = null;
 	private int mark = 0;
 	private int position;
 	Context context;
 	private String mAction;
-	/**
-	 * 文件夹路径
-	 */
 	private String mDirPath;
 
 	private List<String> mDatas;
@@ -116,9 +110,6 @@ public class MyAdapter extends CommonAdapter<String> {
 			}
 		});
 
-		/**
-		 * 已经选择过的图片，显示出选择过的效果
-		 */
 		if (mSelectedImage.contains(mDirPath + "/" + item)) {
 			mSelect.setImageResource(R.drawable.pictures_selected);
 			mImageView.setColorFilter(Color.parseColor("#77000000"));

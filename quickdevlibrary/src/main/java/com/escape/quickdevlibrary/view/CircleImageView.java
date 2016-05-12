@@ -20,12 +20,6 @@ import android.util.AttributeSet;
 import com.escape.quickdevlibrary.R;
 
 
-/**
- * 圆形imageview
- * 
- * @author 李洋
- * 
- */
 public class CircleImageView extends SquareImageView {
 
 	private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;

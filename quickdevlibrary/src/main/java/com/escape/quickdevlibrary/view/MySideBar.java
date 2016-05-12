@@ -11,11 +11,6 @@ import android.view.View;
 import com.escape.quickdevlibrary.R;
 
 
-/**
- * ListVIew右侧导航面板
- * 
- * @author wfs
- */
 public class MySideBar extends View {
 
 	// 是否点击
@@ -46,10 +41,6 @@ public class MySideBar extends View {
 		super(context);
 		this.context = context;
 	}
-
-	/**
-	 * 重写这个方法
-	 */
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		// 如果面板处于点击状态就将面板的背景色绘制为灰色
@@ -85,10 +76,6 @@ public class MySideBar extends View {
 		}
 
 	}
-
-	/**
-	 * 点击事件
-	 */
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent event) {
 		// 得到点击的状态
@@ -144,21 +131,11 @@ public class MySideBar extends View {
 		return super.onTouchEvent(event);
 	}
 
-	/**
-	 * 向外公开的方法
-	 * 
-	 * @param onTouchingLetterChangedListener
-	 */
 	public void setOnTouchingLetterChangedListener(
 			OnTouchingLetterChangedListener onTouchingLetterChangedListener) {
 		this.onTouchingLetterChangedListener = onTouchingLetterChangedListener;
 	}
 
-	/**
-	 * 接口
-	 * 
-	 * @author coder
-	 */
 	public interface OnTouchingLetterChangedListener {
 		public void onTouchingLetterChanged(String s);
 	}

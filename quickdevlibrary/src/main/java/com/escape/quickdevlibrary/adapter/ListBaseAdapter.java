@@ -10,13 +10,6 @@ import android.widget.BaseAdapter;
 
 import java.util.List;
 
-/**
- * 支持泛型，重写的时候把T替换成你的list里的对象就行了
- * 
- * @author 李洋
- * 
- * @param <T>
- */
 public abstract class ListBaseAdapter<T> extends BaseAdapter {
 
 	private Context mContext;
@@ -33,20 +26,10 @@ public abstract class ListBaseAdapter<T> extends BaseAdapter {
 		return mList;
 	}
 
-	/**
-	 * 返回view的绘制器
-	 * 
-	 * @return
-	 */
 	public LayoutInflater getInflater() {
 		return mInflater;
 	}
 
-	/**
-	 * 返回默认的context
-	 * 
-	 * @return
-	 */
 	public Context getContext() {
 		return mContext;
 	}
@@ -82,42 +65,21 @@ public abstract class ListBaseAdapter<T> extends BaseAdapter {
 		getContext().startActivity(intent);
 	}
 
-	/**
-	 * 添加项目
-	 * 
-	 * @param item
-	 */
 	public void addItem(T item) {
 		mList.add(item);
 		notifyDataSetChanged();
 	}
 
-	/**
-	 * 在指定位置添加项目
-	 * 
-	 * @param item
-	 * @param postion
-	 */
 	public void addItem(T item, int postion) {
 		mList.add(postion, item);
 		notifyDataSetChanged();
 	}
 
-	/**
-	 * 删除项目
-	 * 
-	 * @param item
-	 */
 	public void removeItem(T item) {
 		mList.remove(item);
 		notifyDataSetChanged();
 	}
 
-	/**
-	 * 删除指定位置的项目
-	 * 
-	 * @param position
-	 */
 	public void removeItem(int position) {
 		if (position > getCount()) {
 			throw new IndexOutOfBoundsException("postion大于列表的size 了");

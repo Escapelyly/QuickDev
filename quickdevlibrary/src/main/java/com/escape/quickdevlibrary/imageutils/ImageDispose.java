@@ -7,13 +7,6 @@ import android.media.ExifInterface;
 import java.io.IOException;
 
 public class ImageDispose {
-	/**
-	 * 旋转图片
-	 * 
-	 * @param angle
-	 * @param bitmap
-	 * @return Bitmap
-	 */
 	public static Bitmap rotaingImageView(int angle, Bitmap bitmap) {
 		// 旋转图片 动作
 		Matrix matrix = new Matrix();

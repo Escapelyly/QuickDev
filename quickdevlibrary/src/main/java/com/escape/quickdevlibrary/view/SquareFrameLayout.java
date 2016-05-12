@@ -4,12 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-/**
- * 高度为宽度一半的FrameLayout
- * 
- * @author 李洋
- * 
- */
 public class SquareFrameLayout extends FrameLayout {
 
 	public SquareFrameLayout(final Context context) {

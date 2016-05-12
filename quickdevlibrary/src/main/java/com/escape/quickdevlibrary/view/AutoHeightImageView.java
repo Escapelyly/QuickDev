@@ -8,11 +8,6 @@ import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-/**
- * ImageView 根据布局的宽度自适应填充
- * 
- * @author 李洋
- */
 public class AutoHeightImageView extends ImageView {
 
 	public AutoHeightImageView(Context context, AttributeSet attrs, int defStyle) {

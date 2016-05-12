@@ -9,11 +9,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * 新闻中心，条目页面，中 显示轮播图 的viewPager
- *
- * @author leo
- */
 public class RollViewPager extends ViewPager {
 
     // 描述文字的列表
@@ -27,21 +22,9 @@ public class RollViewPager extends ViewPager {
 
     }
 
-    /**
-     * 上一个指示点的位置
-     */
     private int lastDotsPosition = 0;
-    /**
-     * 显示描述信息的文字
-     */
     private TextView top_news_title;
 
-    /**
-     * 设置轮播图描文字
-     *
-     * @param topNewsDescList
-     * @param top_news_title
-     */
     public void setDescList(List<String> topNewsDescList,
                             TextView top_news_title) {
 
@@ -56,20 +39,12 @@ public class RollViewPager extends ViewPager {
 
     }
 
-    /**
-     * 设置轮播图 显示的图片
-     *
-     * @param topNewsImageUrlList
-     */
     public void setImageUrls(List<String> topNewsImageUrlList) {
         this.topNewsImageUrlList = topNewsImageUrlList;
     }
 
 
     @Override
-    /**
-     * 当前view被加载到窗体上显示时，调用
-     */
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         isRunning = true;
@@ -77,22 +52,13 @@ public class RollViewPager extends ViewPager {
 
 
     @Override
-    /**
-     * 当前view从窗体上移除，调用
-     */
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         isRunning = false;
     }
 
-    /**
-     * 判断 轮播图是否运行
-     */
     private boolean isRunning = false;
 
-    /**
-     * 开始滚动
-     */
     public void startRoll() {
 
         if (getAdapter() == null) {
@@ -124,19 +90,12 @@ public class RollViewPager extends ViewPager {
     private int downX;
     private int downY;
 
-    /***
-     * 类ViewGroup 中分发事件的方法
-     */
     public boolean dispatchTouchEvent(MotionEvent ev) {
 
         //System.out.println("RollViewPager.java :"+ev.getAction()); // down 0  up 1  move 2   cancel 3
 
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                /**
-                 * 参数为true 父View 不中断，我们自己处理事件
-                 * 参数为false 不对父View做任务要求，是否中断，看父View自已
-                 */
                 requestDisallowInterceptTouchEvent(true); // 向父view们。请求，别中断事件，啊，把事件给我。
                 downX = (int) ev.getX();
                 downY = (int) ev.getY();
@@ -184,13 +143,6 @@ public class RollViewPager extends ViewPager {
     long startDownTime;
 
     @Override
-    /**
-     * 我们自己处理一部分，touch事件
-     * super.onTouchEvent(ev) 处理ViewPager 原有的逻辑
-     *
-     *点击的动作定义：  down 时的点，和up 事件时的点,二个定距离不超过 20 个象素，同时，时间不超过，500 称之为 点击的动作
-     *
-     */
     public boolean onTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -251,19 +203,8 @@ public class RollViewPager extends ViewPager {
 
     private IOnItemClickListener itemClickListener;
 
-    /**
-     * 轮播图条目的点击事件
-     *
-     * @author leo
-     *         点击的动作定义：  down 时的点，和up 事件时的点,二个定距离不超过 20 个象素，同时，时间不超过，500 称之为 点击的动作
-     */
     public interface IOnItemClickListener {
 
-        /**
-         * 点击某个条目时，回调 该方法
-         *
-         * @param position
-         */
         void onItemClick(int position);
     }
 

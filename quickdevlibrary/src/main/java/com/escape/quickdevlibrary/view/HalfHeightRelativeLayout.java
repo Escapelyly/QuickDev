@@ -4,11 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
-/**
- * 高度为宽度一半的RelativeLayout
- * @author 李洋
- *
- */
 public class HalfHeightRelativeLayout extends RelativeLayout {
 
 	public HalfHeightRelativeLayout(final Context context) {

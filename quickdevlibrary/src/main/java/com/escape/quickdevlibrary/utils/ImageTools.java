@@ -1,9 +1,5 @@
 package com.escape.quickdevlibrary.utils;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
@@ -26,6 +22,10 @@ import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Base64;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * 调用相机，图库和图片裁剪的工具类
@@ -132,11 +132,6 @@ public class ImageTools {
 		mFragment = fragment;
 	}
 
-	/**
-	 * 设置缓存路径
-	 * 
-	 * @param folder
-	 */
 	public void setFolder(String folder) {
 		mFolderString = folder;
 	}
@@ -149,21 +144,11 @@ public class ImageTools {
 		this.defaultWidth = width;
 	}
 
-	/**
-	 * 从activity调用 用这个构造方法
-	 * 
-	 * @param context
-	 */
 	public ImageTools(Context context) {
 		this.mContext = context;
 		initFile();
 	}
 
-	/**
-	 * 从fragment调用 用这个构造方法
-	 * 
-	 * @param fragment
-	 */
 	public ImageTools(Fragment fragment) {
 		this.mFragment = fragment;
 		this.mContext = fragment.getActivity();
@@ -171,12 +156,6 @@ public class ImageTools {
 		initFile();
 	}
 
-	/**
-	 * 图片转字符串
-	 * 
-	 * @param bitmap
-	 * @return
-	 */
 	@SuppressLint("NewApi")
 	public String bitmapToString(Bitmap bitmap) {
 		if (bitmap != null) {
@@ -330,11 +309,6 @@ public class ImageTools {
 
 	}
 
-	/**
-	 * 从onactivityresult中获取bitmap，异步方法，在回调中处理bitmap
-	 * 
-	 * @param onBitmapCreateListener
-	 */
 	@Deprecated
 	public void getBitmapFromCamara(
 			final OnBitmapCreateListener onBitmapCreateListener) {
@@ -385,14 +359,6 @@ public class ImageTools {
 		}
 		return inSampleSize;// 求出缩放值
 	}
-
-	/**
-	 * 从onactivityresult中获取bitmap
-	 * 
-	 * @param data
-	 *            onactivityresult中获取的intent
-	 * @return
-	 */
 	@Deprecated
 	public Bitmap getBitmapFromGallery(Intent data) {
 		Uri selectedImage = data.getData();
@@ -452,12 +418,6 @@ public class ImageTools {
 		}
 	}
 
-	/**
-	 * 获取裁剪后的图片
-	 * 
-	 * @param data
-	 * @return
-	 */
 	@Deprecated
 	public Bitmap getBitmapFromZoomPhoto(Intent data) {
 		Bundle extras = data.getExtras();

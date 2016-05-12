@@ -22,15 +22,6 @@ import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-/**
- * @see http://blog.csdn.net/sodino/article/details/7176796
- * 
- * 
- * @author Sodino E-mail:sodinoopen@hotmail.com
- * @version Time：2011-12-26 下午03:34:16
- * 
- * 
- */
 public class AnimateTextInAndOutFramelayout extends FrameLayout implements
 		OnGlobalLayoutListener {
 

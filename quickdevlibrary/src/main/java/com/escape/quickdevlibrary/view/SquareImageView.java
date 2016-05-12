@@ -4,11 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-/**
- * 宽高一样的imageview
- * @author 李洋
- *
- */
 public class SquareImageView extends ImageView {
 
 	public SquareImageView(Context context, AttributeSet attrs, int defStyle) {

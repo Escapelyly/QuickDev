@@ -12,26 +12,10 @@ import java.util.List;
 
 public class JsonUtils {
 	private static final String TAG = "JsonUtil";
-
-	/**
-	 * json转换成类
-	 * 
-	 * @param data
-	 * @param class1
-	 * @return
-	 */
 	public static <T> T parse(String data, Class<T> class1) {
 		return new Gson().fromJson(data, class1);
 
 	}
-
-	/**
-	 * json转换成列表
-	 * 
-	 * @param data
-	 * @param class1
-	 * @return
-	 */
 	public static <T> List<T> parseList(String data, Class<T> class1) {
 		if (TextUtils.isEmpty(data)) {
 			return null;

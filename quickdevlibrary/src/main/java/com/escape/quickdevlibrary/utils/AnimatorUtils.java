@@ -9,14 +9,6 @@ import com.nineoldandroids.animation.ObjectAnimator;
 
 public class AnimatorUtils {
 
-	/**
-	 * 使view抖动的动画
-	 * 
-	 * @param v
-	 * @param maxX
-	 * @param shakeCount
-	 * @param duration
-	 */
 	public static void shakeView(View v, float maxX, int shakeCount,
 			long duration) {
 		ObjectAnimator mAnimator = ObjectAnimator.ofFloat(v, "translationX",
@@ -27,11 +19,6 @@ public class AnimatorUtils {
 		mAnimator.start();
 	}
 
-	/**
-	 * 缩放动画
-	 * 
-	 * @param v
-	 */
 	public static void scaleAnim(View v) {
 		AnimatorSet mAnimatorSet = new AnimatorSet();
 		ObjectAnimator mAnimator = new ObjectAnimator();

@@ -66,7 +66,7 @@ public abstract class RecyclerViewController<T> extends ViewController implement
         return new RecyleViewDivider(getActivity(), RecyleViewDivider.VERTICAL_LIST);
     }
 
-    private RecyclerView.LayoutManager onCreateLayoutManager(RecyclerView recyclerView) {
+    public RecyclerView.LayoutManager onCreateLayoutManager(RecyclerView recyclerView) {
         return new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false);
     }
 
@@ -75,11 +75,6 @@ public abstract class RecyclerViewController<T> extends ViewController implement
         return (T) mView.findViewById(id);
     }
 
-    /**
-     * 是否启用刷新
-     *
-     * @param enable
-     */
     public void enableSwipeRefresh(boolean enable) {
         mSwipeRefreshLayout.setEnabled(enable);
     }
@@ -88,11 +83,6 @@ public abstract class RecyclerViewController<T> extends ViewController implement
         mAdapter.setShouldLoadMore(enable);
     }
 
-    /**
-     * 列表长度
-     *
-     * @return
-     */
     @Override
     public int getItemCount() {
         return mList.size();
@@ -117,9 +107,6 @@ public abstract class RecyclerViewController<T> extends ViewController implement
         return 0;
     }
 
-    /**
-     *
-     */
     public void setListAdapter() {
         if (mAdapter == null) {
             mAdapter = onCreateAdapter();
@@ -132,9 +119,6 @@ public abstract class RecyclerViewController<T> extends ViewController implement
         mAdapter.setLoadingMore(false);
     }
 
-    /**
-     * @param list
-     */
     public void addItems(List<T> list) {
         int oldSize = mList.size();
         mList.addAll(list);

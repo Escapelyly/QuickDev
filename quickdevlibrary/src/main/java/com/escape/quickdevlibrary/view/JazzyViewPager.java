@@ -20,11 +20,6 @@ import com.nineoldandroids.view.ViewHelper;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-/**
- * 支持自定义转换动画的viewpager
- * @author 李洋
- *
- */
 public class JazzyViewPager extends ViewPager {
 
 	public static final String TAG = "JazzyViewPager";

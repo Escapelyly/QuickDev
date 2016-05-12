@@ -4,11 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-/**
- * 高度为宽度一半的FrameLayout
- * @author 李洋
- *
- */
 public class HalfHeightFrameLayout extends FrameLayout {
 
 	public HalfHeightFrameLayout(final Context context) {
