@@ -45,7 +45,9 @@ public abstract class ViewController {
         return mActivity;
     }
 
-    public abstract void onCreate(Bundle bundle);
+    public  void onCreate(Bundle bundle){
+
+    }
 
     public abstract void onViewCreated();
 

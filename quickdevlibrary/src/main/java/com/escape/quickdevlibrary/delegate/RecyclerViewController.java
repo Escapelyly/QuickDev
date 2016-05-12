@@ -60,6 +60,7 @@ public abstract class RecyclerViewController<T> extends ViewController implement
         if (divider != null) {
             mRecyclerView.addItemDecoration(divider);
         }
+        loadData();
     }
 
     public RecyclerView.ItemDecoration onCreateDivider(RecyclerView recyclerView) {
